@@ -1,0 +1,124 @@
+/* Estilo del header */
+.header {
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent; /* Fondo transparente por defecto */
+  color: #fff;
+  padding: 10px 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  transition: background-color 0.3s ease; /* Transición para el cambio de color */
+}
+
+.header.scrolled {
+  background-color: #333; /* Color de fondo gris cuando el usuario hace scroll */
+}
+
+
+
+/* Estilo del logo */
+.logo {
+  flex: 0 0 auto; /* Mantiene el tamaño del logo fijo */
+}
+
+.logo img {
+  height: 35px; /* Tamaño ajustado del logo */
+  width: auto; /* Mantiene proporciones */
+  border: 2px solid transparent; /* Borde inicial transparente */
+  border-radius: 8px; /* Bordes redondeados, opcional */
+  transition: filter 0.3s ease-in-out; /* Suaviza la animación */
+}
+
+.logo img:hover {
+  filter: drop-shadow(0 0 15px #4fffbc) drop-shadow(0 0 30px #00ff1a); /* Efecto de brillo fuerte */
+}
+
+/* Contenedor de enlaces */
+nav {
+  flex: 1; /* Permite al contenedor nav ocupar más espacio */
+  display: flex;
+  justify-content: center; /* Centra los enlaces horizontalmente */
+}
+
+/* Lista de enlaces */
+.nav-links {
+  list-style: none; /* Quita los puntos de lista */
+  display: flex;
+  gap: 25px; /* Espaciado entre los enlaces */
+  margin: 0;
+  padding: 0;
+  justify-content: center; /* Centra los enlaces horizontalmente */
+  margin-left: -210px; /* Ajusta este valor para mover los enlaces hacia la izquierda o derecha */
+}
+
+/* Estilo de los enlaces */
+.nav-links li {
+  display: inline-block; /* Alinea los elementos horizontalmente */
+}
+
+.nav-links a {
+  color: #fff; /* Color blanco */
+  text-decoration: none; /* Sin subrayado */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  font-size: 13px; /* Tamaño de texto compacto */
+  font-weight: 500; /* Peso medio */
+  padding: 8px 12px; /* Espaciado interno */
+  transition: all 0.3s ease-in-out; /* Transición suave */
+  display: flex; /* Para alinear el texto y el icono */
+  align-items: center; /* Centra verticalmente el texto y el icono */
+}
+
+.nav-links a:hover {
+  color: #77ff89; /* Color al pasar el ratón */
+}
+
+.nav-links a:hover .icon {
+  filter: drop-shadow(0 0 5px #77ff89) drop-shadow(0 0 10px #77ff89); /* Efecto de brillo verde brillante */
+}
+
+.nav-links .icon {
+  width: 20px; /* Ajusta el tamaño del icono */
+  height: auto; /* Mantiene proporciones */
+  margin-right: 8px; /* Espacio entre el icono y el texto */
+  transition: filter 0.3s ease-in-out; /* Transición suave para el efecto de brillo */
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px; /* Reduce padding en móviles */
+    height: auto; /* Ajusta altura automáticamente */
+    flex-wrap: wrap; /* Permite que los elementos ocupen múltiples líneas */
+  }
+
+  .logo img {
+    height: 30px; /* Tamaño de logo más pequeño en móviles */
+  }
+
+  nav {
+    flex: 1 1 100%; /* Ocupa todo el ancho disponible */
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los enlaces bajen de línea si es necesario */
+    gap: 10px; /* Reduce el espacio entre los enlaces */
+    justify-content: center;
+    width: 100%; /* Ocupa todo el ancho */
+  }
+
+  .nav-links a {
+    font-size: 12px; /* Reduce ligeramente el tamaño de fuente en móvil */
+    padding: 6px 10px; /* Ajusta el padding */
+  }
+}

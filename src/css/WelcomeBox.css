@@ -1,0 +1,119 @@
+/* Estilo del contenedor principal con fondo */
+.welcome-container {
+  background-image: url('/src/assets/images/fondo-sitio/wallpaper2.jpg'); /* Asegúrate de que esta sea la ruta correcta */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100vw; /* Usamos 100vw para el ancho completo */
+  height: 100vh; /* Usamos 100vh para la altura completa */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Asegura que no haya desbordamiento en el contenedor */
+  box-sizing: border-box;
+  position: relative;
+  padding: 0; /* Asegura que no haya ningún relleno */
+  margin: 0; /* Asegura que no haya márgenes */
+}
+
+/* Capa negra fija */
+.welcome-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.8); /* Fondo oscuro con transparencia */
+  z-index: 1; /* Asegura que esté detrás del contenido principal */
+}
+
+.welcome-box {
+  position: absolute;
+  top: 0; /* Alinéalo al principio del fondo */
+  left: 0; /* Empieza desde el lado izquierdo */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  height: 100%; /* Asegura que ocupe toda la altura */
+  padding: 2rem; /* Mantén el relleno interno */
+  color: #e0e0e0;
+  box-sizing: border-box;
+  overflow: auto; /* Permite el desbordamiento si el contenido es más grande */
+  white-space: pre-wrap; /* Respeta los saltos de línea en el texto */
+  transition: height 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
+  font-family: 'Space Grotesk', sans-serif; /* Fuente Space Grotesk */
+  z-index: 2; 
+  text-align: center;
+}
+
+/* Estilo del título */
+.welcome-box h1 {
+  font-size: 2rem; /* Tamaño del título */
+  color: #d0d0d0; /* Gris claro */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Estilo para el texto progresivo */
+.welcome-text {
+  font-size: 1.2rem; /* Tamaño de la fuente del texto */
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 1rem;
+  color: #e0e0e0; /* Gris claro */
+}
+
+/* Estilo para los párrafos dentro de la caja de bienvenida */
+.welcome-box p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+  text-indent: 0;
+  color: #e0e0e0; /* Gris claro */
+}
+
+/* Media Query para pantallas pequeñas (por debajo de 768px) */
+@media (max-width: 768px) {
+  .welcome-box {
+    padding: 1.5rem; /* Reduce padding */
+    width: 100vw; /* Asegura que la caja no sobresalga */
+    height: 100vh; /* Ajusta la altura al tamaño de la ventana */
+    overflow: hidden; /* Elimina el desbordamiento horizontal */
+  }
+
+  .welcome-box h1 {
+    font-size: 1.6rem; /* Reduce el tamaño del título */
+  }
+
+  .welcome-text,
+  .welcome-box p {
+    font-size: 1.1rem; /* Reduce ligeramente el tamaño de los textos */
+    margin-top: 0.8rem; /* Ajusta espaciado superior */
+  }
+}
+
+/* Media Query para pantallas extra pequeñas (por debajo de 480px) */
+@media (max-width: 480px) {
+  .welcome-box {
+    padding: 1rem;
+    width: 100vw; /* Asegura que no haya desbordamientos horizontales */
+    height: 100vh; /* Ajusta la altura */
+    overflow: hidden; /* Evita el desbordamiento */
+  }
+
+  .welcome-box h1 {
+    font-size: 1.4rem; /* Título más pequeño */
+  }
+
+  .welcome-text,
+  .welcome-box p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-top: 0.6rem;
+  }
+}

@@ -1,0 +1,47 @@
+/* Estilos del Footer */
+.footer {
+  font-family: 'Anonymous Pro', monospace;
+  position: relative; /* Cambia de fixed a relative para que el footer no esté fijo */
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Ocupa todo el ancho */
+  background-color: #333; /* Fondo oscuro */
+  color: #B0B0B0; /* Color gris claro para el texto */
+  padding: 10px 20px; /* Espaciado interno más compacto */
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil en la parte superior */
+  display: flex;
+  justify-content: center; /* Centra el contenido dentro del footer */
+  align-items: center;
+  height: 60px; /* Mantiene la altura similar al header */
+  z-index: 1000; /* Asegura que el footer esté encima de otros elementos */
+}
+
+/* Ajuste del texto dentro del footer */
+.footer-content {
+  text-align: center; /* Centra el texto dentro del footer */
+  font-size: 14px; /* Tamaño de fuente ajustado */
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Estilo de los enlaces en el footer */
+.footer a {
+  color: #B0B0B0; /* Color gris claro para los enlaces */
+  text-decoration: none; /* Quitar subrayado */
+  font-weight: 600; /* Peso medio */
+  margin-left: 10px; /* Espaciado entre los enlaces */
+  transition: color 0.3s ease-in-out; /* Transición suave */
+}
+
+/* Asegurarse de que el body ocupe toda la altura de la ventana */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* El contenedor principal debe ocupar todo el espacio disponible, excepto el footer */
+.main-content {
+  flex: 1;
+}

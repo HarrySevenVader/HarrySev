@@ -1,0 +1,151 @@
+/* Contenedor de la sección sobre mí */
+.about-me {
+  background-color: #1a1a1a; /* Fondo oscuro */
+  color: #f4f4f4; /* Texto claro para contraste */
+  padding: 4rem 2rem; /* Padding más grande para mayor espacio */
+  border-radius: 0.8rem; /* Bordes redondeados */
+  max-width: 90%; /* Límite de ancho */
+  margin: 3rem auto; /* Centramos la caja en el contenedor */
+  box-sizing: border-box;
+  text-align: center; /* Centra el contenido general */
+  transition: background-color 0.3s ease-in-out; /* Transición suave para cambios */
+}
+
+/* Estilo del título */
+.about-me h2 {
+  font-size: 2.5rem; /* Fuente grande para el título */
+  font-family: 'Space Grotesk', sans-serif; /* Usamos Space Grotesk para una fuente moderna */
+  color: #ffffff;
+  margin: 0; /* Eliminar márgenes para que se alineen con los párrafos */
+  padding: 0; /* Eliminar relleno extra */
+  letter-spacing: 0.5rem;
+  text-transform: uppercase; /* Texto en mayúsculas para estilo */
+  font-weight: 600; /* Peso más grueso para el título */
+  text-align: justify; /* Justifica el texto del título */
+  line-height: 1.4; /* Ajusta la altura de línea para una alineación más precisa */
+  display: block; /* Asegura que los títulos sean bloques completos */
+  margin-bottom: 2rem; /* Aumentar espacio debajo del h2 */
+  margin-left: 125px; /* Alineación del título */
+}
+
+/* Estilo del subtítulo (h3) */
+.about-me h3 {
+  font-size: 1.8rem;
+  color: #f4f4f4;
+  margin: 0; /* Eliminar márgenes */
+  padding: 0; /* Eliminar relleno extra */
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: justify; /* Justifica el texto del subtítulo */
+  line-height: 1.4;
+  display: block; /* Asegura que los subtítulos sean bloques completos */
+  margin-bottom: 1.2rem; /* Espacio debajo del h3 */
+  margin-left: 125px; /* Alineación del subtítulo */
+}
+
+/* Estilo del párrafo */
+.about-me p {
+  font-size: 1.2rem; /* Tamaño de fuente más pequeño para los párrafos */
+  line-height: 1.7; /* Espaciado entre líneas para mejor legibilidad */
+  color: #d0d0d0; /* Gris suave para el texto */
+  margin-top: 1rem; /* Añadir un poco de margen superior para separar mejor de los títulos */
+  margin-bottom: 1.5rem; /* Espaciado inferior para separación entre párrafos */
+  text-align: justify; /* Justificamos el texto */
+  max-width: 80%; /* Limita el ancho del texto para mayor legibilidad */
+  margin-left: auto;
+  margin-right: auto; /* Centrado automático */
+  white-space: pre-wrap; /* Mantiene los saltos de línea */
+}
+
+/* Fondo negro extendido debajo de la caja */
+body {
+  background-color: #111; /* Fondo oscuro para toda la página */
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Estilo del contenedor principal */
+.about-me-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.about-me-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 10vh; /* Extiende el fondo negro ligeramente hacia abajo */
+  background-color: #111; /* Fondo negro */
+  z-index: -1;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .about-me {
+    padding: 3rem 1.5rem; /* Menos padding para pantallas pequeñas */
+    width: 95%; /* Hace que ocupe más espacio */
+    margin: 1rem 0; /* Margen reducido para pantallas pequeñas */
+  }
+
+  .about-me h2 {
+    font-size: 2rem; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    margin-left: 0; /* Ajuste en el margen izquierdo */
+    text-align: center; /* Centra el texto en pantallas pequeñas */
+  }
+
+  .about-me h3 {
+    font-size: 1.4rem; /* Reducción en tamaño de fuente para pantallas pequeñas */
+    margin-left: 0; /* Ajuste en el margen izquierdo */
+    text-align: center; /* Centra el texto en pantallas pequeñas */
+  }
+
+  .about-me p {
+    font-size: 1rem; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+    max-width: 95%; /* Ampliamos el máximo ancho de los párrafos */
+  }
+
+  /* Mantener la imagen del perfil proporcional */
+  .profile-picture {
+    width: 250px; /* Tamaño ajustado para pantallas pequeñas */
+    height: 250px; /* Tamaño ajustado para pantallas pequeñas */
+    margin-bottom: 15px; /* Espacio debajo de la foto */
+  }
+
+  /* Asegura que las imágenes de perfil se alineen correctamente */
+  .profile-picture-separator {
+    flex-direction: column; /* Cambia la dirección a columna */
+    align-items: center; /* Centra las imágenes verticalmente */
+  }
+
+  .profile-picture-separator::after {
+    display: none; /* Oculta la línea entre las imágenes en móviles */
+  }
+}
+
+/* Para dispositivos grandes, mantenemos el diseño original */
+.profile-picture {
+  width: 300px; /* Tamaño fijo de la imagen */
+  height: 300px; /* Tamaño fijo de la imagen */
+  border-radius: 50%; /* Marco redondo */
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsión */
+  margin-bottom: 20px; /* Espacio debajo de la foto */
+  border: 4px solid #333; /* Borde decorativo gris oscuro */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
+}
+
+.profile-picture-separator {
+  display: flex; /* Alinea las imágenes horizontalmente */
+  gap: 10px; /* Espacio horizontal entre las imágenes */
+  justify-content: center; /* Centra las imágenes en el contenedor */
+  align-items: center; /* Centra las imágenes verticalmente si es necesario */
+}
+
+.profile-picture-separator::after {
+  content: "";
+  width: 2px; /* Espesor de la línea */
+  height: 100%; /* Altura de la línea */
+  background-color: #0cf98a; /* Color de la línea */
+  margin-left: 10px; /* Separación de la línea respecto a la imagen */
+}
